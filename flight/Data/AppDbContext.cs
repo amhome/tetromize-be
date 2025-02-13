@@ -23,7 +23,10 @@ namespace Tetromize.Data
             base.OnModelCreating(builder);
             AppDbContextConfig.SeedData(builder);
 
-            // builder.Entity<Flight>().HasIndex(x => x.RouteId);
+            builder.Entity<Flight>().HasIndex(x => x.RouteId);
+            builder.Entity<Subscription>().HasIndex(x => x.AgencyId);
+            builder.Entity<Route>().HasIndex(x => x.OriginCityId);
+            builder.Entity<Route>().HasIndex(x => x.DestinationCityId);
         }
     }
 }
