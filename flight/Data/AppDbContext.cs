@@ -7,6 +7,11 @@ namespace Tetromize.Data
     public class AppDbContext : DbContext
     {
 
+        public DbSet<Subscription> Subscriptions { get; set; }
+        public DbSet<Route> Routes { get; set; }
+        public DbSet<Flight> Flights { get; set; }
+
+        
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             var configuration = new ConfigurationBuilder()
