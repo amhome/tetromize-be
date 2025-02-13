@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Flight.Data
+namespace Tetromize.Data
 {
     public class AppDbContextConfig
     {

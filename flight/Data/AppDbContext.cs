@@ -1,7 +1,8 @@
+using Tetromize.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Flight.Data
+namespace Tetromize.Data
 {
     public class AppDbContext : DbContext
     {
@@ -21,6 +22,8 @@ namespace Flight.Data
         {
             base.OnModelCreating(builder);
             AppDbContextConfig.SeedData(builder);
+
+            // builder.Entity<Flight>().HasIndex(x => x.RouteId);
         }
     }
 }
