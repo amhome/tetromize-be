@@ -6,5 +6,7 @@ namespace Tetromize.Models
         public int OriginCityId { get; set; }
         public int DestinationCityId { get; set; }
         public DateTime DepartureDate { get; set; }
+
+        public ICollection<Flight> Flights { get; set; } = new HashSet<Flight>();
     }
 }

@@ -11,7 +11,7 @@ namespace Tetromize.Data
         public DbSet<Route> Routes { get; set; }
         public DbSet<Flight> Flights { get; set; }
 
-        
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             var configuration = new ConfigurationBuilder()
@@ -32,6 +32,7 @@ namespace Tetromize.Data
             builder.Entity<Subscription>().HasIndex(x => x.AgencyId);
             builder.Entity<Route>().HasIndex(x => x.OriginCityId);
             builder.Entity<Route>().HasIndex(x => x.DestinationCityId);
+            builder.Entity<Route>().HasMany(x => x.Flights).WithOne(x => x.Route).HasForeignKey(x => x.RouteId).IsRequired();
         }
     }
 }
